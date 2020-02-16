@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import boto3
-from network import create_route,create_vpc, create_security_group, authorize_security_group_ingress,create_internet_gateway
+from network import create_subnet,create_route_table,create_vpc, create_security_group, authorize_security_group_ingress,create_internet_gateway
 from security import create_key_pair
 from compute import create_instances
 
@@ -25,8 +25,8 @@ instance_info = {
 
 ec2_r = boto3.resource('ec2')
 ec2_c = boto3.resource('ec2')
-create_key_pair(ec2_c,vpc,lab_tag)
 vpc = create_vpc(ec2_r, networks['public'],lab_tag)
+create_key_pair(ec2_c,vpc,lab_tag)
 sg = create_security_group(ec2_c,vpc,lab_tag)
 authorize_security_group_ingress(ec2_c,sg,ports['ssh'])
 igw = create_internet_gateway(ec2_c,vpc)
