@@ -8,5 +8,5 @@ def create_vpc(ec2_c, cidr_block, lab_tag):
         "Key":"Name",
         "Value": lab_tag
     }])
-    vpc.wait_until_availabile()
+    vpc.wait_until_available()
     return vpc
