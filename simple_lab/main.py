@@ -16,12 +16,11 @@ networks = {
     }
 keys = {
     'ssh-key':'key-pair-'+lab_tag
-}
-
+    }
 instance_info = {
-    'ImageId'='ami-0a887e401f7654935',
-    'InstanceType'='t2.micro',
-    'KeyName'=keys['ssh-key']
+    'ImageId':'ami-0a887e401f7654935',
+    'InstanceType':'t2.micro',
+    'KeyName':keys['ssh-key']
 }
 
 ec2_r = boto3.resource('ec2')
