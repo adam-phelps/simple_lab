@@ -15,7 +15,7 @@ networks = {
     'public-sub'+'-'+lab_tag:'172.19.1.0/24'
     }
 keys = {
-    'ssh-key': 'key-pair-' + lab_tag
+    'ssh-key':'key-pair-'+lab_tag
 }
 
 instance_info = {

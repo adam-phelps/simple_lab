@@ -1,4 +1,4 @@
-def create_key_pairp(ec2_c,my_key):
+def create_key_pair(ec2_c,my_key):
     try:
         response = ec2.create_key_pair(KeyName=my_key)
         with open(my_key + ".pem","w") as f:
