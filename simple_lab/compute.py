@@ -1,5 +1,5 @@
-def create_instances(ec2_c,sg_id,sub_id,lab_tag,instance_info,instance_name):
-    instance = ec2_c.create_instances(
+def create_instances(ec2_r,sg_id,sub_id,lab_tag,instance_info,instance_name):
+    instance = ec2_r.create_instances(
         TagSpecifications=[{'ResourceType':'instance',
             'Tags': [{
             'Key' : 'Name',
@@ -15,10 +15,10 @@ def create_instances(ec2_c,sg_id,sub_id,lab_tag,instance_info,instance_name):
         #!/bin/bash
         yum install ansible
         """,
-        NetworkInferfaces=[{
+        NetworkInterfaces=[{
+        "Groups": [sg_id.id],
         "SubnetId": sub_id.id,
         "DeviceIndex": 0,
-        "Groups": [sg_id.group_id],
         "AssociatePublicIpAddress": True
         }]
     )

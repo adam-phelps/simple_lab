@@ -5,5 +5,5 @@ def create_key_pair(ec2_c,my_key):
             f.write(response['KeyMaterial'])
         return response
     except:
-        response = ec2_c.describe_key_pairs(KeyNames=[my_key])
-        return response
+        print("Key {} already exists.".format(my_key))
+        return 0
