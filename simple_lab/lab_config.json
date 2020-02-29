@@ -1,0 +1,18 @@
+{
+    "lab_tag":"mylab10",
+    "ports": {
+            "ssh":"22"
+        },
+    "networks": {
+            "vpc-lab":"172.19.0.0/16",
+            "public-sub-lab":"172.19.1.0/24"
+        },
+    "keys": {
+        "ssh-key":"key-pair-lab"
+        },
+    "instance_info": {
+        "ImageId":"ami-0a887e401f7654935",
+        "InstanceType":"t2.micro",
+        "KeyName":"key-pair-lab"
+    }
+}
