@@ -13,6 +13,7 @@
     "instance_info": {
         "ImageId":"ami-0a887e401f7654935",
         "InstanceType":"t2.micro",
-        "KeyName":"key-pair-lab"
+        "KeyName":"key-pair-lab",
+        "amount": "2"
     }
 }

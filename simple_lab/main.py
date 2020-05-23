@@ -14,6 +14,7 @@ def read_config_file():
         print(f"{e}")
 
 if __name__ == "__main__":
+    instances = []
     myconfig = read_config_file()
     lab_tag = myconfig['lab_tag']
     ec2_r = boto3.resource('ec2')
@@ -25,5 +26,6 @@ if __name__ == "__main__":
     igw = create_internet_gateway(ec2_r,vpc)
     rt_table = create_route_table(vpc,igw)
     sub = create_subnet(ec2_r,vpc,rt_table,myconfig['networks']['public-sub-lab'],lab_tag)
-    instance = create_instances(ec2_r,sg,sub,lab_tag,myconfig['instance_info'],'Public-Linux')
-    print(instance[0].public_ip_address)
+    for instance in range(0, int(myconfig['instance_info']['amount'])):
+        instances.append(create_instances(ec2_r,sg,sub,lab_tag,myconfig['instance_info'],'Public-Linux-'+str(instance)))
+        print(instances[instance][0].public_ip_address)

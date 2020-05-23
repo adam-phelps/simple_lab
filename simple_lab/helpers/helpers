@@ -1,0 +1,1 @@
+for vpc in $(aws ec2 describe-vpcs | grep VpcId | awk -F '"' '{print $4}'); do ./vpcdel.sh $vpc; done
