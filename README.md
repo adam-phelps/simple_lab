@@ -8,7 +8,8 @@ Quickily and easily provision EC2 instances in AWS! This is very helpful for qui
 
 Git clone the repo to a local directory.
 Edit the json file:
-```{
+```
+{
     "lab_tag": "mylab10",
     "ports": {
             "ssh": "22"
@@ -26,7 +27,8 @@ Edit the json file:
         "KeyName": "key-pair-lab",
         "amount": "2"
     }
-}```
+}
+```
 
 ## Usage
 
