@@ -33,6 +33,7 @@ Edit the json file:
 ## Usage
 
 Edit this file as needed to create a dynamic lab setup.  Depending on what you name your keypair, get to your EC2 instance via:
+
 `ssh -i key-pair-lab.pem ec2-user@<EC2 INSTANCE PUBLIC_IP>`
 
 
